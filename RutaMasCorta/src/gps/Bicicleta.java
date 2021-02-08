@@ -19,12 +19,9 @@ public class Bicicleta {
         int sum2 = 0;
         int sum3 = 0;
         
-        for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
-        }
+        sum1= sumaCamino(camino1);
+        sum2= sumaCamino(camino2);
+        sum3= sumaCamino(camino3);
         
         if(sum1 < sum2 && sum1 < sum3)
         {
@@ -49,6 +46,19 @@ public class Bicicleta {
             }
         }
         
+    }
+    
+    /**
+     *  Método para calcular la suma de los valores del camino recibido como parámetro
+     * @param camino array con los valores de los kilometros de cada tramo de la ruta
+     * @return suma de los valores del array camino
+     */
+    public static int sumaCamino (int camino []) {
+    	int suma=0, i=0;
+    	for (i=0;i<camino.length;i++) {
+    		suma = suma + camino[i];
+    	}
+    	return suma;
     }
 
     public static void main(String[] args) {
